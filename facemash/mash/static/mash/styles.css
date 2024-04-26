@@ -4,6 +4,7 @@ html, body {
   font-family: 'Roboto Mono', monospace;
   background: #212121;
   height: 100%;
+  overflow: hidden; /* Prevent vertical scrolling */
 }
 
 .container {
@@ -12,6 +13,7 @@ html, body {
   justify-content: center;
   align-items: center;
   display: flex;
+  
 }
 
 .text {
@@ -23,3 +25,8 @@ html, body {
 .dud {
   color: #757575;
 }
+
+
+
+
+
