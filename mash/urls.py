@@ -6,7 +6,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name="index"),
-    path('facemash', views.facemash, name="facemash")
+    path('facemash', views.facemash, name="facemash"),
+    path('facemash/next_pair/', views.facemash_next_pair, name='facemash_next_pair'),
+
 
 
 

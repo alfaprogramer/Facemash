@@ -14,10 +14,37 @@
   <main>
     <div class="container">
       <div class="image-container">
-         <img src="{{ image1.image.url }}" alt="{{ image1.name }}">
-          <img src="{{ image2.image.url }}" alt="{{ image2.name }}">
+        <img id="image1" src="{{ image1.image.url }}" alt="{{ image1.name }}">
+        <img id="image2" src="{{ image2.image.url }}" alt="{{ image2.name }}">
+
       </div>
     </div>
   </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+  document.getElementById('image1').addEventListener('click', function() {
+    fetchNewImages();
+});
+
+document.getElementById('image2').addEventListener('click', function() {
+    fetchNewImages();
+});
+
+
+
+function fetchNewImages() {
+    fetch('/facemash/next_pair/')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('image1').src = data.image1_url;
+        document.getElementById('image2').src = data.image2_url;
+    })
+    .catch(error => {
+        console.error('Error fetching new images:', error);
+    });
+}
+  </script>
 </body>
 </html>
