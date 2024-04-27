@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FaceMash</title>
+   <link href="{% static 'mash/styles2.css' %}" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>faceMash</h1>
+  </header>
+  <main>
+    <div class="container">
+      <div class="image-container">
+         <img src="{{ image1.image.url }}" alt="{{ image1.name }}">
+          <img src="{{ image2.image.url }}" alt="{{ image2.name }}">
+      </div>
+    </div>
+  </main>
+</body>
+</html>
