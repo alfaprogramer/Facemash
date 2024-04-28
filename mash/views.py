@@ -46,6 +46,9 @@ def facemash_next_pair(request):
     data = {
         'image1_url': random_images[0].image.url,
         'image2_url': random_images[1].image.url,
+        'image1_name': random_images[0].name,  # Include image name
+        'image2_name': random_images[1].name,  # Include image name
+        
     }
 
     # Store the IDs of the newly selected images in session data

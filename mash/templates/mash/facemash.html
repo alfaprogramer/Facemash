@@ -13,37 +13,63 @@
   </header>
   <main>
     <div class="container">
-      <div class="image-container">
-        <img id="image1" src="{{ image1.image.url }}" alt="{{ image1.name }}">
-        <img id="image2" src="{{ image2.image.url }}" alt="{{ image2.name }}">
-
-      </div>
+        <div class="image-container">
+            <div class="image-wrapper">
+                <img id="image1" src="{{ image1.image.url }}" alt="{{ image1.name }}">
+                <div id="image1-name" class="image-name">{{ image1.name }}</div>
+            </div>
+            <div class="image-wrapper">
+                <img id="image2" src="{{ image2.image.url }}" alt="{{ image2.name }}">
+                <div id="image2-name" class="image-name">{{ image2.name }}</div>
+            </div>
+        </div>
     </div>
-  </main>
+</main>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script>
-  document.getElementById('image1').addEventListener('click', function() {
+// Remove existing event listeners before attaching new ones
+document.getElementById('image1').removeEventListener('click', handleClickImage1);
+document.getElementById('image2').removeEventListener('click', handleClickImage2);
+
+// Add event listeners to images
+document.getElementById('image1').addEventListener('click', handleClickImage1);
+document.getElementById('image2').addEventListener('click', handleClickImage2);
+
+// Function to handle clicks on image1
+function handleClickImage1() {
     fetchNewImages();
-});
+}
 
-document.getElementById('image2').addEventListener('click', function() {
+// Function to handle clicks on image2
+function handleClickImage2() {
     fetchNewImages();
-});
+}
 
-
-
+// Function to fetch new images
 function fetchNewImages() {
     fetch('/facemash/next_pair/')
     .then(response => response.json())
     .then(data => {
+        // Update image URLs
         document.getElementById('image1').src = data.image1_url;
         document.getElementById('image2').src = data.image2_url;
+        // Update image names
+        document.getElementById('image1').alt = data.image1_name;
+        document.getElementById('image2').alt = data.image2_name;
+        // Update names displayed below the images
+        updateImageNames(data.image1_name, data.image2_name);
     })
     .catch(error => {
         console.error('Error fetching new images:', error);
     });
+}
+
+// Function to update image names displayed below the images
+function updateImageNames(name1, name2) {
+    document.getElementById('image1-name').textContent = name1;
+    document.getElementById('image2-name').textContent = name2;
 }
   </script>
 </body>

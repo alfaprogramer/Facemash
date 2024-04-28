@@ -6,7 +6,6 @@ body {
 }
 
 header {
-
   color: #fff;
   padding: 10px 20px;
   position: fixed;
@@ -21,7 +20,7 @@ h1 {
 }
 
 main {
-  margin-top: 0px; /* Adjust according to the header height */
+  margin-top: 20px; /* Adjust according to the header height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,6 +36,10 @@ main {
   justify-content: space-between;
 }
 
+.image-wrapper {
+  text-align: center; /* Center align the image and name */
+}
+
 .image-container img {
   width: 400px; 
   height: 480px;
@@ -44,8 +47,11 @@ main {
   transition: transform 0.3s ease; /* Add smooth transition */
 }
 
-
-
 .image-container img:hover {
   transform: scale(1.10); /* Increase size by 5% on hover */
+}
+
+.image-name {
+  color: #fff; /* Set text color to white */
+  margin-top: 40px; /* Adjust margin as needed */
 }
