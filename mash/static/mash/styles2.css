@@ -55,3 +55,26 @@ main {
   color: #fff; /* Set text color to white */
   margin-top: 40px; /* Adjust margin as needed */
 }
+
+
+
+.music-status {
+  position: fixed;
+  bottom: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  background-color: #fff; /* Match the default background color */
+  color: #212121; /* Text color */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 5px; /* Rounded corners */
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  transition: background-color 0.3s, border-color 0.3s; /* Add smooth transition for background color and border color */
+  border: 1px solid #212121; /* Add border */
+}
+
+.music-status:hover {
+  background-color: #212121; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+  border-color: #fff; /* Change border color on hover */
+}
