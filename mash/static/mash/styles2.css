@@ -78,3 +78,35 @@ main {
   color: #fff; /* Change text color on hover */
   border-color: #fff; /* Change border color on hover */
 }
+
+
+
+
+
+
+
+
+
+
+/* CSS for the notification div */
+.notification {
+  position: fixed;
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  background-color: #fff; /* Background color */
+  color: #212121; /* Text color */
+  padding: 8px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+  transition: background-color 0.3s, border-color 0.3s; /* Transition */
+  border: 1px solid #212121; /* Border */
+}
+
+.notification:hover {
+  background-color: #212121; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+  border-color: #fff; /* Change border color on hover */
+
+
+
+}
