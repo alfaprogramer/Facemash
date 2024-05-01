@@ -15,7 +15,7 @@
     <h1>faceMash</h1>
   </header>
   <main>
-   <div class="notification">
+   <div class="notification" onclick="openPopup()">
         Add Image
     </div>
     <div class="container">
@@ -35,6 +35,38 @@
   <p id="musicText">Music On</p>
 </div>
 </main>
+<div class="overlay" id="overlay"></div> <!-- Add overlay -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Add Image</h2>
+           <form action="{% url 'add_image' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <button type="submit" class="submit-button">Submit</button>
+    <p class="upload-instructions">Keep in mind:</p>
+<ul class="upload-instructions-list">
+    <li>The name of the person you are uploading should be correct and full.</li>
+    <li>The image should be in high quality and should have a ratio of 5:6 (width:height).</li>
+    <li>Please upload the image with the person's consent.</li>
+</ul>
+</form>
+        </div>
+    </div>
  
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -117,6 +149,22 @@ function stopMusic() {
   musicPlayer.currentTime = 0; // Reset to the beginning of the audio
   isMusicPlaying = false;
   musicText.textContent = 'Music On';
+}
+
+
+
+
+
+
+// JavaScript to open and close the popup
+function openPopup() {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('popup').style.display = 'block';
+}
+
+function closePopup() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
 }
   </script>
 </body>

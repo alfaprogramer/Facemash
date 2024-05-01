@@ -110,3 +110,111 @@ main {
 
 
 }
+
+
+
+
+
+
+
+
+
+/* CSS for the popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #212121;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10000; /* Set higher z-index */
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 34px; /* Increase font size */
+  padding: 5px; /* Add padding */
+  transition: transform 0.3s;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* CSS for the overlay */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  z-index: 9999; /* Set below popup */
+}
+
+
+form {
+  display: flex;
+    flex-direction: column; /* Align elements vertically */
+    align-items: flex-start; /* Align elements to the left */
+  padding: 20px; /* Add padding */
+  border-radius: 10px; /* Add border radius */
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 10px; /* Adjust spacing between form groups */
+}
+
+label {
+  width: 100px; /* Set a fixed width for the labels */
+}
+
+
+
+
+
+
+.submit-button {
+  margin-top: 20px; /* Adjust top margin */
+  width: 100%; /* Make the button full width */
+  text-align: center; /* Align text center */
+  background-color: #212121 ; /* Set background color */
+  color: white; /* Set text color */
+  border: 1px solid #212121; /* Add border */
+  padding: 10px; /* Add padding */
+  border-radius: 5px; /* Add border radius */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s; /* Add transition effect */
+}
+
+.submit-button:hover {
+  background-color: yellow; /* Change background color on hover */
+}
+
+
+
+
+.upload-instructions {
+  margin-top: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.upload-instructions-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: white;
+}

@@ -1,7 +1,8 @@
-from django.shortcuts import render
-from django.http import JsonResponse
+from django.shortcuts import render,redirect
+from django.http import JsonResponse,HttpResponse
 from random import sample
-from .models import Image
+from .models import Image,UserData
+
 
 
 def index(request):
@@ -56,3 +57,21 @@ def facemash_next_pair(request):
 
     return JsonResponse(data)
 # Create your views here.
+
+
+
+def add_image(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        image = request.FILES.get('image')
+        email = request.POST.get('email')
+        
+        # Save data to database
+        image_obj = Image.objects.create(name=name, image=image)
+        UserData.objects.create(name=name, email=email, image=image_obj)
+        
+        # Redirect to a success page or render a success message
+        # Here, I'm returning an HttpResponse with a success message
+        return HttpResponse('<script>alert("Image added successfully!"); window.location.href = "facemash";</script>')
+    
+    return render(request, 'mash/facemash.html')  # Render the form template
