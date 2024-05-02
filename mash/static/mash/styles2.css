@@ -71,6 +71,7 @@ main {
   align-items: center; /* Center vertically */
   transition: background-color 0.3s, border-color 0.3s; /* Add smooth transition for background color and border color */
   border: 1px solid #212121; /* Add border */
+  user-select: none; /* Prevent text selection */
 }
 
 .music-status:hover {
@@ -100,6 +101,7 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
   transition: background-color 0.3s, border-color 0.3s; /* Transition */
   border: 1px solid #212121; /* Border */
+  user-select: none; /* Prevent text selection */
 }
 
 .notification:hover {
@@ -146,6 +148,7 @@ main {
   font-size: 34px; /* Increase font size */
   padding: 5px; /* Add padding */
   transition: transform 0.3s;
+  user-select: none; /* Prevent text selection */
 }
 
 .close-btn:hover {
