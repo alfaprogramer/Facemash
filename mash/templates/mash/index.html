@@ -12,6 +12,8 @@
  <div class="container">
     <div class="text"></div>
   </div>
+  <div class="version">V 0.1</div>
+  <div class="proceed">Click to proceed</div>
   
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -92,6 +94,13 @@ const next = () => {
 }
 
 next();
+
+
+
+ // Redirect to facemash page when clicked anywhere on the page
+  document.addEventListener('click', function() {
+    window.location.href = 'http://127.0.0.1:8000/facemash';
+  });
 
 
 

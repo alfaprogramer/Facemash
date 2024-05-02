@@ -10,22 +10,35 @@ def index(request):
 
 
 def facemash(request):
-    # Get all images from the database
-    all_images = Image.objects.all()
-    
-    # Sample two random images
-    random_images = sample(list(all_images), 2)
-    
-    # Ensure that both images are different
-    if random_images[0] == random_images[1]:
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        image = request.FILES.get('image')
+        email = request.POST.get('email')
+        
+        # Save data to database
+        image_obj = Image.objects.create(name=name, image=image)
+        UserData.objects.create(name=name, email=email, image=image_obj)
+        
+        # Redirect to a success page or render a success message
+        # Here, I'm returning an HttpResponse with a success message
+        return HttpResponse('<script>alert("Image added successfully!"); window.location.href = "http://127.0.0.1:8000/facemash";</script>')
+    else:
+        # Get all images from the database
+        all_images = Image.objects.all()
+        
+        # Sample two random images
         random_images = sample(list(all_images), 2)
-    
-    context = {
-        'image1': random_images[0],
-        'image2': random_images[1]
-    }
-    
-    return render(request, 'mash/facemash.html', context)
+        
+        # Ensure that both images are different
+        if random_images[0] == random_images[1]:
+            random_images = sample(list(all_images), 2)
+        
+        context = {
+            'image1': random_images[0],
+            'image2': random_images[1]
+        }
+        
+        return render(request, 'mash/facemash.html', context)
 
 
 
@@ -60,18 +73,3 @@ def facemash_next_pair(request):
 
 
 
-def add_image(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        image = request.FILES.get('image')
-        email = request.POST.get('email')
-        
-        # Save data to database
-        image_obj = Image.objects.create(name=name, image=image)
-        UserData.objects.create(name=name, email=email, image=image_obj)
-        
-        # Redirect to a success page or render a success message
-        # Here, I'm returning an HttpResponse with a success message
-        return HttpResponse('<script>alert("Image added successfully!"); window.location.href = "facemash";</script>')
-    
-    return render(request, 'mash/facemash.html')  # Render the form template

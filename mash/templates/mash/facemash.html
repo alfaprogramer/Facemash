@@ -39,8 +39,8 @@
     <div class="popup" id="popup">
         <div class="popup-content">
             <span class="close-btn" onclick="closePopup()">&times;</span>
-            <h2>Add Image</h2>
-           <form action="{% url 'add_image' %}" method="post" enctype="multipart/form-data">
+            <h2 >Add Image</h2>
+           <form action="{% url 'facemash' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group">
         <label for="name">Name:</label>

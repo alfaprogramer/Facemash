@@ -195,13 +195,13 @@ label {
   color: white; /* Set text color */
   border: 1px solid #212121; /* Add border */
   padding: 10px; /* Add padding */
-  border-radius: 5px; /* Add border radius */
+  border-radius: 20px; /* Add border radius */
   cursor: pointer; /* Change cursor to pointer */
   transition: background-color 0.3s; /* Add transition effect */
 }
 
 .submit-button:hover {
-  background-color: yellow; /* Change background color on hover */
+  background-color: black; /* Change background color on hover */
 }
 
 
