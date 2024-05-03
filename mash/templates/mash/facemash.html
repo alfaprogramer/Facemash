@@ -34,6 +34,16 @@
    <div class="music-status" id="musicStatus">
   <p id="musicText">Music On</p>
 </div>
+
+<div class="support" onclick="openSupportPopup()">
+  Support Me
+</div>
+
+
+
+
+
+
 </main>
 <div class="overlay" id="overlay"></div> <!-- Add overlay -->
     <div class="popup" id="popup">
@@ -67,6 +77,26 @@
 </form>
         </div>
     </div>
+
+
+
+
+
+
+
+  <div class="overlay" id="supportOverlay"></div>
+<div class="popup" id="supportPopup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closeSupportPopup()">&times;</span>
+    <h2>Support Me</h2>
+    <p>After 90 days, this website will be taken down because it is deployed on the free version of the render. Please support me so I can buy the subscription. Your little contribution will matter a lot.</p>
+    <div class="square-image">
+      <!-- Add your square image here -->
+       <img src="{% static 'mash/money.jpg' %}" alt="Money">
+    </div>
+    <p>Follow me on Instagram: <a href="https://www.instagram.com/adityasharma7226/" target="_blank">adityasharma7226</a></p>
+  </div>
+</div>
  
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -165,6 +195,24 @@ function openPopup() {
 function closePopup() {
     document.getElementById('overlay').style.display = 'none';
     document.getElementById('popup').style.display = 'none';
+}
+
+
+
+
+
+
+
+
+
+function openSupportPopup() {
+  document.getElementById('supportOverlay').style.display = 'block';
+  document.getElementById('supportPopup').style.display = 'block';
+}
+
+function closeSupportPopup() {
+  document.getElementById('supportOverlay').style.display = 'none';
+  document.getElementById('supportPopup').style.display = 'none';
 }
   </script>
 </body>
