@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'facemash.wsgi.application'
 
 
 DATABASES = {
-    "defaut":dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    "default":dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
