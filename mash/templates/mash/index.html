@@ -99,8 +99,15 @@ next();
 
  // Redirect to facemash page when clicked anywhere on the page
   document.addEventListener('click', function() {
-    window.location.href = 'http://127.0.0.1:8000/facemash';
-  });
+    // Get the current domain and path
+    var baseUrl = window.location.origin;
+
+    // Construct the URL for the next page
+    var nextPageUrl = baseUrl + '/facemash';
+
+    // Redirect to the next page
+    window.location.href = nextPageUrl;
+});
 
 
 
