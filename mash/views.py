@@ -21,7 +21,7 @@ def facemash(request):
         
         # Redirect to a success page or render a success message
         # Here, I'm returning an HttpResponse with a success message
-        return HttpResponse('<script>alert("Image added successfully!"); window.location.href = "http://127.0.0.1:8000/facemash";</script>')
+        return HttpResponse('<script>alert("Image added successfully!"); window.location.href = "https://facemash-aqrg.onrender.com/facemash/";</script>')
     else:
         # Get all images from the database
         all_images = Image.objects.all()
